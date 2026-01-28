@@ -1,8 +1,6 @@
-/* General Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 html { scroll-behavior: smooth; }
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0; width: 100%; height: 80px;
@@ -30,22 +28,21 @@ html { scroll-behavior: smooth; }
   font-size: 0.95rem; transition: color 0.3s;
 }
 
-.nav-links a:hover { color: #008080; }
+.nav-links a:hover { color: #00112D; }
 
 main,
 .landing-page {
   padding-top: 80px;
 }
 
-/* Active page */
 .nav-links a.active {
-  color: #008080;
+  color: #00112D;
   font-weight: 700;
 }
 
 /* Contact button */
 .contact-btn {
-  background: #008080;
+  background: #00112D;
   color: white !important;
   padding: 8px 18px;
   border-radius: 50px;
@@ -72,13 +69,12 @@ main,
 
 .primary-cta {
   padding: 15px 40px; font-size: 1rem; border: none;
-  border-radius: 50px; background: #008080; color: white;
+  border-radius: 50px; background: #00112D; color: white;
   cursor: pointer; transition: transform 0.2s, background 0.3s;
 }
 
 .primary-cta:hover { transform: translateY(-3px); background: #006666; }
 
-/* Grid Section */
 .featured { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
 
 .section-header { text-align: center; margin-bottom: 60px; }
@@ -91,16 +87,14 @@ main,
   gap: 30px;
 }
 
-/* Flip card wrapper */
 .flip-card {
   background: transparent;
   width: 250px;
   height: 300px;
-  perspective: 1000px; /* enables 3D effect */
+  perspective: 1000px; 
 
 }
 
-/* Inner flip mechanism */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -110,12 +104,10 @@ main,
   position: center;
 }
 
-/* Flip on hover */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Front and back faces */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -130,7 +122,6 @@ main,
   justify-content: center;
 }
 
-/* Front face */
 .flip-card-front {
   background-color: #fff;
   color: #333;
@@ -142,7 +133,6 @@ main,
   object-fit: flex;
 }
 
-/* Back face */
 .flip-card-back {
   background-color: #ffffff;
   color: black;
@@ -168,14 +158,13 @@ main,
 .card-body p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
 
 .learn-more {
-  padding: 10px 25px; border: 1.5px solid #008080; background: transparent;
-  color: #008080; border-radius: 50px; cursor: pointer; font-weight: 600;
+  padding: 10px 25px; border: 1.5px solid #00112D; background: transparent;
+  color: #00112D; border-radius: 50px; cursor: pointer; font-weight: 600;
   transition: all 0.3s;
 }
 
-.learn-more:hover { background: #008080; color: white; }
+.learn-more:hover { background: #00112D; color: white; }
 
-/* Why Choose Us Section */
 .why-choose-us {
   background: #f9f9f9;
   padding: 80px 5%;
@@ -207,14 +196,12 @@ main,
   color: #1e58e9;
 }
 
-/* Our Services Section */
 .our-services {
   background: #fff;
   padding: 80px 5%;
   text-align: center;
 }
 
-/* Layout */
 .services-grid {
   display: flex;
   flex-direction: column;
@@ -228,14 +215,12 @@ main,
   gap: 30px;
 }
 
-/* Card base */
 .our-services .flip-card {
   width: 250px;
   height: 300px;
   perspective: 1000px;
 }
 
-/* Inner */
 .our-services .flip-card-inner {
   width: 100%;
   height: 100%;
@@ -244,12 +229,10 @@ main,
   transform-style: preserve-3d;
 }
 
-/* Flip effect */
 .our-services .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Front & back */
 .our-services .flip-card-front,
 .our-services .flip-card-back {
   position: absolute;
@@ -264,14 +247,12 @@ main,
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* FRONT */
 .our-services .flip-card-front {
   background: #fff;
   overflow: hidden;
   position: relative;
 }
 
-/* Background image */
 .our-services .flip-card-front::before {
   content: "";
   position: absolute;
@@ -281,7 +262,6 @@ main,
   z-index: 0;
 }
 
-/* Dark overlay (ONLY Our Services) */
 .our-services .flip-card-front::after {
   content: "";
   position: absolute;
@@ -290,7 +270,6 @@ main,
   z-index: 0;
 }
 
-/* Title */
 .our-services .flip-card-front h3 {
   position: relative;
   z-index: 1;
@@ -299,7 +278,6 @@ main,
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
-/* BACK */
 .our-services .flip-card-back {
   background: #ffffff;
   color: #333;
@@ -309,7 +287,6 @@ main,
   line-height: 1.5;
 }
 
-/* IMAGES */
 .flip-card.it .flip-card-front::before {
   background-image: url("https://www.ratcliff.it/hs-fs/hubfs/corridor-IT-network-infrastructure.png?width=1200&height=1000&name=corridor-IT-network-infrastructure.png");
 }
@@ -334,34 +311,31 @@ main,
   background-image: url("https://fudsinternational.com/cdn/shop/articles/Fire_alarm_system_3.jpg?v=1746792201&width=1100");
 }
 
-/* Responsive */
 @media (max-width: 992px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
   .grid-container { grid-template-columns: 1fr; }
   .hero-content h1 { font-size: 2.5rem; }
-  .nav-links { display: none; } /* Hide for simplicity in this demo */
+  .nav-links { display: none; }
 }
 
-/* Footer Base */
 .footer {
-  background-color: #063793;   /* Dark background */
-  color: #fff;              /* White text */
+  background-color: #00112D;
+  color: #fff;
   padding: 40px 20px;
   margin-top: 40px;
 }
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;          /* Responsive layout */
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Footer Sections */
 .footer-section {
-  flex: 1 1 250px;          /* Flexible width */
+  flex: 1 1 250px;
   min-width: 200px;
 }
 
@@ -378,7 +352,6 @@ main,
   line-height: 1.6;
 }
 
-/* Social Media Links */
 .footer-socmed {
   display: flex;
   flex-direction: column;
@@ -396,7 +369,7 @@ main,
 }
 
 .footer-socmed a:hover {
-  color: #00aced;           /* Highlight on hover */
+  color: #00aced;
 }
 
 .footer-socmed img {
@@ -405,7 +378,6 @@ main,
   object-fit: contain;
 }
 
-/* Responsive Footer */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -419,7 +391,6 @@ main,
   cursor: pointer;
 }
 
-/* hidden initially */
 .dropdown-menu {
   position: absolute;
   top: 45px;
@@ -436,7 +407,6 @@ main,
   z-index: 9999;
 }
 
-/* show on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -455,12 +425,8 @@ main,
   background: #f2f2f2;
 }
 
-/* ===============================
-   PARTNERS PAGE UPGRADED STYLE
-================================ */
-
 .partners-page {
-  padding: 60px 8%; /* more side spacing */
+  padding: 60px 8%;
   text-align: center;
 }
 
@@ -476,7 +442,6 @@ main,
   margin-bottom: 50px;
 }
 
-/* section */
 .partner-section {
   padding: 50px 40px;
   border-radius: 16px;
@@ -490,10 +455,6 @@ main,
   font-size: 22px;
   font-weight: 700;
 }
-
-/* =================================
-   AUTO MOVING MARQUEE
-================================= */
 
 .logo-marquee {
   overflow: hidden;
@@ -509,7 +470,6 @@ main,
   animation: scroll 25s linear infinite;
 }
 
-/* auto scroll animation */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -518,10 +478,6 @@ main,
     transform: translateX(-50%);
   }
 }
-
-/* =================================
-   BIGGER LOGO CARDS
-================================= */
 
 .logo-card {
   min-width: 220px;
@@ -539,7 +495,6 @@ main,
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* image style */
 .logo-card img {
   max-width: 150px;
   max-height: 100px;
@@ -547,25 +502,15 @@ main,
   object-fit: contain;
 }
 
-/* ==============================
-   HOVER EFFECTS
-============================== */
-
-/* zoom card */
 .logo-card:hover {
   transform: scale(1.12);
   box-shadow: 0 12px 28px rgba(0,0,0,0.3);
 }
 
-/* grayscale → color */
 .logo-card:hover img {
   filter: grayscale(0%);
   transform: scale(1.05);
 }
-
-/* =================================
-   RESPONSIVE
-================================= */
 
 @media (max-width: 768px) {
   .logo-card {
@@ -577,4 +522,3 @@ main,
     gap: 20px;
   }
 }
-
