@@ -8,6 +8,8 @@ import Partners from "./pages/Partners";
 import Gall from "./pages/Gall";
 import Contact from "./pages/Contact";
 import Footer from "./component/Footer";
+import Clients from "./pages/Clients";
+
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -174,33 +176,50 @@ const App = () => {
   </div>
 </section>
 
-  // Navbar Component
-  const Navbar = () => (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <div className="logo">
-          <img src="https://via.placeholder.com/120x40?text=TRAVEL+LOGO" alt="Logo" />
-        </div>
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/company">Company</Link></li>
-          <li><Link to="/solution">Solution</Link></li>
+      
+    </div>
+  );
+
+ const Navbar = () => (
+  <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <div className="nav-container">
+      <div className="logo">
+        <img
+          src="https://via.placeholder.com/120x40?text=TRAVEL+LOGO"
+          alt="Logo"
+        />
+      </div>
+
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+
+        <li><Link to="/company">Company</Link></li>
+
+        <li><Link to="/solution">Solution</Link></li>
+
         {/* ✅ DROPDOWN ADDED HERE */}
-          <li className="dropdown">
+        <li className="dropdown">
           <span className="dropdown-title">Partners & Clients ▾</span>
+
           <ul className="dropdown-menu">
             <li><Link to="/partners">Partners</Link></li>
             <li><Link to="/clients">Clients</Link></li>
           </ul>
         </li>
-          <li><Link to="/gall">Gallery</Link></li>
-          <li><Link to="/contact" className="contact-btn">Contact</Link></li>
-        </ul>
-      </div>
-    </nav>
-  );
 
-return (
+        <li><Link to="/gall">Gallery</Link></li>
+
+        <li>
+          <Link to="/contact" className="contact-btn">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </nav>
+);
+
+  return (
     <Router>
       <Navbar />
       <Routes>
