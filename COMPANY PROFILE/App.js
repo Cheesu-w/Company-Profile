@@ -7,6 +7,7 @@ import Solution from "./pages/Solution";
 import Partners from "./pages/Partners";
 import Gall from "./pages/Gall";
 import Contact from "./pages/Contact";
+import Footer from "./component/Footer";
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,12 +21,12 @@ const App = () => {
 
   // Featured/About Section Data
   const about = [
-    { id: 1, title: "Site Survey", img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=500&q=80" },
-    { id: 2, title: "Responsive", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80" },
-    { id: 3, title: "Affordable Pricing", img: "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=500&q=80" },
-    { id: 4, title: "End to End Solutions", img: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=500&q=80" },
-    { id: 5, title: "Innovative Solutions", img: "https://images.unsplash.com/photo-1520000000000-000000000000?auto=format&fit=crop&w=500&q=80" }, // Placeholder
-    { id: 6, title: "High Quality Service", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=80" },
+    { id: 1, title: 'Site Survey', img: 'https://media.istockphoto.com/id/1054975708/vector/a-man-in-a-helmet-and-theodolite.jpg?s=612x612&w=0&k=20&c=_7JJ6DPE3CkKecfR9g-vWVRdhtFinFcNtdCqDL8TN3k=' },
+    { id: 2, title: 'Responsive', img: 'https://media.istockphoto.com/id/1218761008/vector/fast-contract-linear-icon-of-instant-deal.jpg?s=612x612&w=0&k=20&c=GLzbhkdNkImK-OSDyE_J0qqduL0Jlt1lhW_eixhfJvg=' },
+    { id: 3, title: 'Affordable Pricing', img: 'https://img.freepik.com/premium-vector/affordable-prices-icon_1076610-110376.jpg?w=360' },
+    { id: 4, title: 'End to End Solutions', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_TTkKumQQtiXxT_--1llP7PSRTjEdTEhuA&s' },
+    { id: 5, title: 'Innovative Solutions', img: 'https://png.pngtree.com/png-clipart/20210311/original/pngtree-light-bulb-innovation-clip-art-png-image_5978000.png' }, 
+    { id: 6, title: 'High Quality Service', img: 'https://otrs.com/wp-content/uploads/IT-Service-Desk-Featured-Image.jpg' },
   ];
 
   // Landing Page Component
@@ -42,31 +43,40 @@ const App = () => {
         </div>
       </header>
 
-      {/* Featured/About Section */}
+      {/* Featured Section */}
       <section className="featured">
         <div className="section-header">
           <h2>About Us</h2>
           <p>
-            Visible is an IT solution company, your trusted partner in navigating the digital landscape.
-            From tailored software development to cutting-edge cybersecurity and transformative cloud services,
-            we deliver seamless technology solutions to drive efficiency, productivity, and growth.
+            Visible is a IT solution company who are your trusted partner in navigating the digital landscape.
+            <br />From tailored software development to cutting-edge cybersecurity and transformative cloud services,
+            <br />we deliver seamless technology solutions to drive efficiency, productivity, 
+            <br />and growth for your organization.
           </p>
         </div>
+
         <div className="grid-container">
           {about.map((item) => (
-            <div key={item.id} className="card">
-              <div className="card-image">
-                <img src={item.img} alt={item.title} />
-              </div>
-              <div className="card-body">
-                <h3>{item.title}</h3>
-                <p>Tailored to clients needs</p>
-                <button className="learn-more">Learn More</button>
+            <div key={item.id} className="flip-card">
+              <div className="flip-card-inner">
+                {/* Front Side */}
+                <div className="flip-card-front">
+                  <img src={item.img} alt={item.title} />
+                  <h3>{item.title}</h3>
+                </div>
+
+                {/* Back Side */}
+                <div className="flip-card-back">
+                  <h3>{item.title}</h3><br />
+                  <p>We provide {item.title.toLowerCase()} to help your business grow.</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      
     </div>
   );
 
@@ -100,6 +110,8 @@ const App = () => {
         <Route path="/gall" element={<Gall />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+        <Footer /> {/* shows on ALL pages */}
     </Router>
   );
 };
