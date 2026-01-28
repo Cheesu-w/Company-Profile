@@ -174,17 +174,18 @@ html { scroll-behavior: smooth; }
   max-width: 700px;
   margin: 0 auto 40px;
   color: #555;
-  font-size: 1.5rem;
+  font-size: 1rem ;
   line-height: 1.6;
 }
 
 .reasons-list {
   list-style: none;
   padding: 0;
+  display: center;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #1e58e9;
 }
 
@@ -195,24 +196,11 @@ html { scroll-behavior: smooth; }
   text-align: center;
 }
 
-.our-services .section-header h2 {
-  font-size: 2.5rem;
-  color: #222;
-  margin-bottom: 20px;
-}
-
-.our-services .section-header p {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
+/* Layout */
 .services-grid {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* space between top and bottom rows */
+  gap: 40px;
   align-items: center;
 }
 
@@ -222,16 +210,109 @@ html { scroll-behavior: smooth; }
   gap: 30px;
 }
 
+/* Card base */
 .flip-card {
   width: 250px;
   height: 300px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  perspective: 1000px;
+}
+
+/* Inner */
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flip effect */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & back */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* FRONT */
+.flip-card-front {
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ✅ Background image + dark overlay */
+.flip-card-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* ✅ Dark overlay layer */
+.flip-card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* controls text visibility */
+  z-index: 0;
+}
+
+/* Title (text stays clear) */
+.flip-card-front h3 {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+/* BACK */
+.flip-card-back {
+  background: #ffffff;
+  color: #333;
+  transform: rotateY(180deg);
   text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* IMAGES */
+.flip-card.it .flip-card-front::before {
+  background-image: url("https://www.ratcliff.it/hs-fs/hubfs/corridor-IT-network-infrastructure.png?width=1200&height=1000&name=corridor-IT-network-infrastructure.png");
+}
+
+.flip-card.security .flip-card-front::before {
+  background-image: url("https://offers.24by7security.com/hubfs/Security%20guard%20monitoring%20CCTV%20Physical%20Security.jpg");
+}
+
+.flip-card.datacenter .flip-card-front::before {
+  background-image: url("https://engineering.fb.com/wp-content/uploads/2018/05/data-center-shot.jpg");
+}
+
+.flip-card.networking .flip-card-front::before {
+  background-image: url("https://imageio.forbes.com/specials-images/dam/imageserve/1135040422/960x0.jpg?height=474&width=711&fit=bounds");
+}
+
+.flip-card.datasecurity .flip-card-front::before {
+  background-image: url("https://krontech.com/_upload/blogimages/why-is-data-security-important-blog-730x411.jpg");
+}
+
+.flip-card.fire .flip-card-front::before {
+  background-image: url("https://fudsinternational.com/cdn/shop/articles/Fire_alarm_system_3.jpg?v=1746792201&width=1100");
 }
 
 /* Responsive */
