@@ -70,7 +70,6 @@ const hostingLogos = [
 ];
 
 const LogoSlider = ({ title, bgColor, logos }) => {
-  // duplicate logos for infinite loop
   const loopLogos = [...logos, ...logos];
 
   return (
