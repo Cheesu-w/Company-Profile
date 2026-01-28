@@ -73,6 +73,66 @@ html { scroll-behavior: smooth; }
   gap: 30px;
 }
 
+/* Flip card wrapper */
+.flip-card {
+  background: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px; /* enables 3D effect */
+
+}
+
+/* Inner flip mechanism */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: center;
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Front face */
+.flip-card-front {
+  background-color: #fff;
+  color: #333;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 70%;
+  object-fit: flex;
+}
+
+/* Back face */
+.flip-card-back {
+  background-color: #ffffff;
+  color: black;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
 .card {
   background: white; border-radius: 20px; overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -103,4 +163,75 @@ html { scroll-behavior: smooth; }
   .grid-container { grid-template-columns: 1fr; }
   .hero-content h1 { font-size: 2.5rem; }
   .nav-links { display: none; } /* Hide for simplicity in this demo */
+}
+
+/* Footer Base */
+.footer {
+  background-color: #063793;   /* Dark background */
+  color: #fff;              /* White text */
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;          /* Responsive layout */
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1 1 250px;          /* Flexible width */
+  min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Social Media Links */
+.footer-socmed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-socmed a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-socmed a:hover {
+  color: #00aced;           /* Highlight on hover */
+}
+
+.footer-socmed img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
