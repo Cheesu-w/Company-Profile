@@ -5,13 +5,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
 
-        {/* Company Info */}
         <div className="footer-section">
           <h3>Visible Technologies International</h3>
           <p>Transforming businesses through innovative IT solutions.</p>
         </div>
 
-        {/* Contact Info */}
         <div className="footer-section">
           <h4>Contact</h4>
           <p>Email: sales@vtic.ph</p>
@@ -19,14 +17,12 @@ const Footer = () => {
           <p>Telephone: (02) 8244 6562</p>
         </div>
 
-        {/* Address */}
         <div className="footer-section">
           <h4>Address</h4>
           <p>1GF Unit 102 Ridgewood Towers 3, C5 (Northbound)</p>
           <p>Ususan Taguig City 1639</p>
         </div>
 
-        {/* Social Media */}
         <div className="footer-section footer-socmed">
           <h4>Follow us on:</h4>
 
