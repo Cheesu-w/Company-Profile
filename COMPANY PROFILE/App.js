@@ -14,14 +14,12 @@ import Clients from "./pages/Clients";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Sticky Navbar background effect
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Featured/About Section Data
   const about = [
     { id: 1, title: 'Site Survey', img: 'https://media.istockphoto.com/id/1054975708/vector/a-man-in-a-helmet-and-theodolite.jpg?s=612x612&w=0&k=20&c=_7JJ6DPE3CkKecfR9g-vWVRdhtFinFcNtdCqDL8TN3k=' },
     { id: 2, title: 'Responsive', img: 'https://media.istockphoto.com/id/1218761008/vector/fast-contract-linear-icon-of-instant-deal.jpg?s=612x612&w=0&k=20&c=GLzbhkdNkImK-OSDyE_J0qqduL0Jlt1lhW_eixhfJvg=' },
@@ -31,10 +29,8 @@ const App = () => {
     { id: 6, title: 'High Quality Service', img: 'https://otrs.com/wp-content/uploads/IT-Service-Desk-Featured-Image.jpg' },
   ];
 
-  // Landing Page Component
   const LandingPage = () => (
     <div className="landing-page">
-      {/* Hero Section */}
       <header className="hero">
         <div className="hero-overlay">
           <div className="hero-content">
@@ -45,7 +41,6 @@ const App = () => {
         </div>
       </header>
 
-      {/* Featured Section */}
       <section className="featured">
         <div className="section-header">
           <h2>About Us</h2>
@@ -61,13 +56,11 @@ const App = () => {
           {about.map((item) => (
             <div key={item.id} className="flip-card">
               <div className="flip-card-inner">
-                {/* Front Side */}
                 <div className="flip-card-front">
                   <img src={item.img} alt={item.title} />
                   <h3>{item.title}</h3>
                 </div>
 
-                {/* Back Side */}
                 <div className="flip-card-back">
                   <h3>{item.title}</h3><br />
                   <p>We provide {item.title.toLowerCase()} to help your business grow.</p>
@@ -77,7 +70,6 @@ const App = () => {
           ))}
         </div>
       </section>
-{/* Why Choose Us Section */}
 <section className="why-choose-us">
   <div className="section-header">
     <h2>Why Choose Us</h2>
@@ -95,14 +87,12 @@ const App = () => {
   </ul>
 </section>
 
-{/* Our Services */}
 <section className="our-services">
   <div className="section-header">
     <h2>Our Services</h2>
   </div>
 
   <div className="services-grid">
-    {/* Top row */}
     <div className="card-row">
       <div className="flip-card it">
         <div className="flip-card-inner">
@@ -138,7 +128,6 @@ const App = () => {
       </div>
     </div>
 
-    {/* Bottom row */}
     <div className="card-row">
       <div className="flip-card networking">
         <div className="flip-card-inner">
@@ -197,7 +186,6 @@ const App = () => {
 
         <li><Link to="/solution">Solution</Link></li>
 
-        {/* ✅ DROPDOWN ADDED HERE */}
         <li className="dropdown">
           <span className="dropdown-title">Partners & Clients ▾</span>
 
@@ -232,7 +220,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-        <Footer /> {/* shows on ALL pages */}
+        <Footer />
     </Router>
   );
 };
