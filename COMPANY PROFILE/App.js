@@ -185,7 +185,14 @@ const App = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/company">Company</Link></li>
           <li><Link to="/solution">Solution</Link></li>
-          <li><Link to="/partners">Partners & Clients</Link></li>
+        {/* ✅ DROPDOWN ADDED HERE */}
+          <li className="dropdown">
+          <span className="dropdown-title">Partners & Clients ▾</span>
+          <ul className="dropdown-menu">
+            <li><Link to="/partners">Partners</Link></li>
+            <li><Link to="/clients">Clients</Link></li>
+          </ul>
+        </li>
           <li><Link to="/gall">Gallery</Link></li>
           <li><Link to="/contact" className="contact-btn">Contact</Link></li>
         </ul>
@@ -193,7 +200,7 @@ const App = () => {
     </nav>
   );
 
-  return (
+return (
     <Router>
       <Navbar />
       <Routes>
@@ -201,6 +208,7 @@ const App = () => {
         <Route path="/company" element={<Company />} />
         <Route path="/solution" element={<Solution />} />
         <Route path="/partners" element={<Partners />} />
+        <Route path="/clients" element={<Clients />} />
         <Route path="/gall" element={<Gall />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
