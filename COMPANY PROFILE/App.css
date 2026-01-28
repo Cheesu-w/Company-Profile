@@ -157,6 +157,65 @@ html { scroll-behavior: smooth; }
 
 .learn-more:hover { background: #008080; color: white; }
 
+/* Why Choose Us Section */
+.why-choose-us {
+  background: #f9f9f9;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.why-choose-us .section-header h2 {
+  font-size: 2.5rem;
+  color: #1e58e9;
+  margin-bottom: 20px;
+}
+
+.why-choose-us .section-header p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.reasons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: left;
+  font-size: 1.5rem;
+  color: #1e58e9;
+}
+
+/* Our Services Section */
+.our-services {
+  background: #fff;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.our-services .section-header h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.our-services .section-header p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
 /* Responsive */
 @media (max-width: 992px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
