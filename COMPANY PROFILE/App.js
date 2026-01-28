@@ -88,7 +88,7 @@ const App = () => {
   </div>
   <ul className="reasons-list">
     <li>Solution 1: Enterprise Complete End to End Solution</li>
-    <li>Solution 2: Mid-Range End to End Solution for Small/Medium Business</li>
+    <li>Solution 2: Mid-Range End to End Solution for Small to Medium Business</li>
     <li>Solution 3: Entry Level Complete End to End Solution</li>
   </ul>
 </section>
@@ -102,7 +102,7 @@ const App = () => {
   <div className="services-grid">
     {/* Top row */}
     <div className="card-row">
-      <div className="flip-card">
+      <div className="flip-card it">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>IT Infrastructure</h3>
@@ -113,7 +113,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flip-card">
+      <div className="flip-card security">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>Physical Security</h3>
@@ -124,7 +124,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flip-card">
+      <div className="flip-card datacenter">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>Data Center</h3>
@@ -138,7 +138,7 @@ const App = () => {
 
     {/* Bottom row */}
     <div className="card-row">
-      <div className="flip-card">
+      <div className="flip-card networking">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>Networking</h3>
@@ -149,7 +149,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flip-card">
+      <div className="flip-card datasecurity">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>Data Security</h3>
@@ -160,7 +160,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flip-card">
+      <div className="flip-card fire">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <h3>Fire Detection And Alarm System</h3>
