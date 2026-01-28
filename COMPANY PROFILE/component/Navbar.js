@@ -33,7 +33,6 @@ const Navbar = () => {
 
           <li><Link to="/solution" className={isActive("/solution")}>Solution</Link></li>
 
-          {/* ✅ PURE CSS DROPDOWN */}
           <li className="dropdown">
             <span className="dropdown-title">Partners & Clients ▾</span>
 
