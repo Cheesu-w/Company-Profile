@@ -211,14 +211,14 @@ html { scroll-behavior: smooth; }
 }
 
 /* Card base */
-.flip-card {
+.our-services .flip-card {
   width: 250px;
   height: 300px;
   perspective: 1000px;
 }
 
 /* Inner */
-.flip-card-inner {
+.our-services .flip-card-inner {
   width: 100%;
   height: 100%;
   position: relative;
@@ -227,13 +227,13 @@ html { scroll-behavior: smooth; }
 }
 
 /* Flip effect */
-.flip-card:hover .flip-card-inner {
+.our-services .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
 /* Front & back */
-.flip-card-front,
-.flip-card-back {
+.our-services .flip-card-front,
+.our-services .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -247,13 +247,14 @@ html { scroll-behavior: smooth; }
 }
 
 /* FRONT */
-.flip-card-front {
+.our-services .flip-card-front {
   background: #fff;
   overflow: hidden;
+  position: relative;
 }
 
-/* ✅ Background image + dark overlay */
-.flip-card-front::before {
+/* Background image */
+.our-services .flip-card-front::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -262,17 +263,17 @@ html { scroll-behavior: smooth; }
   z-index: 0;
 }
 
-/* ✅ Dark overlay layer */
-.flip-card-front::after {
+/* Dark overlay (ONLY Our Services) */
+.our-services .flip-card-front::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* controls text visibility */
+  background: rgba(0, 0, 0, 0.45);
   z-index: 0;
 }
 
-/* Title (text stays clear) */
-.flip-card-front h3 {
+/* Title */
+.our-services .flip-card-front h3 {
   position: relative;
   z-index: 1;
   color: #ffffff;
@@ -281,7 +282,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* BACK */
-.flip-card-back {
+.our-services .flip-card-back {
   background: #ffffff;
   color: #333;
   transform: rotateY(180deg);
