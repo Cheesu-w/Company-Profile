@@ -93,84 +93,86 @@ const App = () => {
   </ul>
 </section>
 
-{/* Our Services with Flip Cards */}
+{/* Our Services */}
 <section className="our-services">
   <div className="section-header">
     <h2>Our Services</h2>
-    <p>Explore what we can do for you.</p>
   </div>
+
   <div className="services-grid">
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>IT Infrastructure</h3>
+    {/* Top row */}
+    <div className="card-row">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>IT Infrastructure</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>A standardized and organized approach to designing and installing a network infrastructure within a building or facility.</p>
+          </div>
         </div>
-        <div className="flip-card-back">
-          <p>A standardized and organized approach to designing and installing a network infrastructure within a building or facility.</p>
+      </div>
+
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>Physical Security</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>Physical security refers to the measures put in place to protect physical assets, resources, and personnel from unauthorized access, damage, or harm.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>Data Center</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>Data centers are specialized facilities used to house and manage computer systems and associated components, such as storage systems, networking equipment, and telecommunications infrastructure.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>Physical Security</h3>
-        </div>
-        <div className="flip-card-back">
-          <p>Physical security refers to the measures put in place to protect physical assets, resources, and personnel from unauthorized access, damage, or harm.</p>
-        </div>
-      </div>
-    </div>
-
-        <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>Data Center</h3>
-        </div>
-        <div className="flip-card-back">
-          <p>Data centers are specialized facilities used to house and manage computer systems and associated components, such as storage systems, networking equipment, and telecommunications infrastructure.</p>
+    {/* Bottom row */}
+    <div className="card-row">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>Networking</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>Networking technology encompasses the hardware, software, and protocols that enable communication and data exchange between devices and systems within a computer network.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-        <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>Networking</h3>
-        </div>
-        <div className="flip-card-back">
-          <p>Networking technology encompasses the hardware, software, and protocols that enable communication and data exchange between devices and systems within a computer network.
-</p>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>Data Security</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>Refers to the practice of protecting digital data, such as databases, files, and communications, from unauthorized access, corruption, theft, or loss.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-        <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>Data Security</h3>
-        </div>
-        <div className="flip-card-back">
-          <p>refers to the practice of protecting digital data, such as databases, files, and communications, from unauthorized access, corruption, theft, or loss.</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h3>Fire Detection And Alarm System</h3>
-        </div>
-        <div className="flip-card-back">
-          <p>The primary purpose of an FDAS is to provide early warning of a fire, allowing occupants to evacuate safely and enabling firefighters to respond promptly to extinguish the fire and prevent its spread.</p>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <h3>Fire Detection And Alarm System</h3>
+          </div>
+          <div className="flip-card-back">
+            <p>The primary purpose of an FDAS is to provide early warning of a fire, allowing occupants to evacuate safely and enabling firefighters to respond promptly to extinguish the fire and prevent its spread.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-      
-    </div>
-  );
 
   // Navbar Component
   const Navbar = () => (
