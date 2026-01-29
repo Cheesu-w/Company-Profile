@@ -1,6 +1,5 @@
 const Contact = () => (
   <>
-    {/* MAP SECTION */}
     <div className="map-container">
       <iframe
         title="Ridgewood Towers Map"
@@ -10,11 +9,9 @@ const Contact = () => (
       />
     </div>
 
-    {/* CONTACT SECTION */}
     <div className="contact-wrapper">
       <div className="contact-grid">
 
-        {/* LEFT */}
         <div className="contact-left">
           <p className="contact-label">CONTACT US</p>
           <h1 className="contact-title">Get In Touch With Us</h1>
@@ -93,7 +90,6 @@ const Contact = () => (
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className="contact-right">
           <div className="box">
             <form className="contact-form">
