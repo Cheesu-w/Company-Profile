@@ -248,7 +248,6 @@ main,
 .our-services .flip-card-front {
   background: #fff;
   overflow: hidden;
-  position: relative;
 }
 
 .our-services .flip-card-front::before {
