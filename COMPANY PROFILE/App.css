@@ -1,7 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 html { scroll-behavior: smooth; }
 
-/* Navbar Styling */
 .navbar {
   position: fixed;
   top: 0; width: 100%; height: 80px;
@@ -9,11 +8,10 @@ html { scroll-behavior: smooth; }
   transition: all 0.4s ease;
   z-index: 1000;
   padding: 0 5%;
-  background-color: transparent; /* Initial state */
+  background-color: transparent;
 }
 
 .navbar.scrolled .logo img {
-  /* This turns the logo back to its original colors */
   filter: none; 
 }
 .navbar.scrolled {
@@ -34,17 +32,14 @@ html { scroll-behavior: smooth; }
   margin: 0 auto;
 }
 
-/* Additional fix for Dropdown visibility on scroll */
 .navbar.scrolled .dropdown-title {
-  color: #333; /* Dark text when bg is white */
+  color: #333; 
 }
 
-
 .logo img {
-  height: 45px; /* Adjust height as needed */
+  height: 45px;
   width: auto;
   transition: filter 0.3s ease;
-  /* If your logo is dark, this makes it white on the transparent hero section */
   filter: brightness(0) invert(1); 
 }
 
@@ -54,13 +49,12 @@ html { scroll-behavior: smooth; }
 }
 
 .contact-btn {
-  background: #008ba3;
+  background: #00112d;
   color: white !important;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
-/* Dropdown */
 .dropdown { position: relative; }
 .dropdown-menu {
   position: absolute; top: 100%; left: 0; background: white;
@@ -71,29 +65,25 @@ html { scroll-behavior: smooth; }
 .dropdown-menu li a { color: #333 !important; padding: 8px 20px; display: block; }
 .dropdown-menu li a:hover { background: #f5f5f5; }
 
-/* Hero Section */
 .hero {
-  max-width: 1200px; /* Match the nav container */
-  margin: 0 auto; /* Center it */
-  height: 500px; /* Fixed height like the screenshot */
-  border-radius: 30px; /* Rounded corners */
-  overflow: hidden; /* Ensures background/overlay doesn't bleed out */
+  max-width: auto;
+  height: 500px;
+  overflow: hidden;
   background: url('https://bluesoft.com/wp-content/uploads/2024/11/MicrosoftTeams-image.jpg') center/cover no-repeat;
   position: relative;
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.4); /* Slight darkening for text contrast */
+  background: rgba(0, 0, 0, 0.4);
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 80px; /* Align text to the left as per design */
+  padding-left: 80px;
   text-align: left;
 }
 
-/* Typography to match design */
 .hero-content h1 {
-  font-size: 8rem; /* Extra large bold text */
+  font-size: 8rem;
   font-weight: 900;
   margin: 0;
   line-height: 1;
@@ -105,13 +95,12 @@ html { scroll-behavior: smooth; }
   margin: 10px 0 30px 0;
 }
 
-/* The Explore Button */
 .hero-content .primary-cta {
   background: white;
   color: black;
   border: none;
   padding: 12px 40px;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
@@ -125,7 +114,6 @@ html { scroll-behavior: smooth; }
 .hero-content h1 { font-size: 5rem; color: white; font-weight: 900; }
 .hero-content p { color: white; font-size: 1.2rem; margin: 20px 0; opacity: 0.9; }
 
-/* About Us Grid */
 .featured { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
 .about-grid-container {
   display: grid;
@@ -144,27 +132,24 @@ html { scroll-behavior: smooth; }
   backface-visibility: hidden; border-radius: 8px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
-.flip-card-front { background: #008ba3; color: white; padding: 20px; text-align: center; }
+.flip-card-front { background: #00112d; color: white; padding: 20px; text-align: center; }
 .flip-card-front img { width: 50px; margin-bottom: 15px; filter: brightness(0) invert(1); }
 .flip-card-front h3 { font-size: 0.9rem; }
-.flip-card-back { background: #005f6e; color: white; transform: rotateY(180deg); padding: 20px; text-align: center; }
-
-/* Why Choose Us Split Layout */
+.flip-card-back { background: #023c85; color: white; transform: rotateY(180deg); padding: 20px; text-align: center; }
 
 .why-choose-us { padding: 80px 5%; background: #fff; }
 .why-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
 .why-left h2 { font-size: 2.5rem; margin-bottom: 20px; }
-.why-image-wrapper img { width: 100%; border-radius: 15px; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.why-image-wrapper img { width: 100%; border-radius: 0px; margin-top: 30px;}
 
 .solution-item { margin-bottom: 40px; }
 .sol-badge { 
-    background: #008ba3; color: white; padding: 5px 15px; 
+    background: #00112d; color: white; padding: 5px 15px; 
     border-radius: 20px; font-size: 0.7rem; font-weight: bold; 
 }
 .solution-item h4 { margin: 15px 0 10px; font-size: 1.2rem; }
 .solution-item p { color: #666; line-height: 1.6; }
 
-/* Our Services Static Hover Cards */
 .services-static-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
   max-width: 1200px; margin: 0 auto;
@@ -177,25 +162,23 @@ html { scroll-behavior: smooth; }
 }
 .service-card::before {
   content: ""; position: absolute; inset: 0;
-  background: rgba(0, 0, 0, 0.7); /* Darker overlay for text readability */
+  background: rgba(0, 0, 0, 0.5);
   transition: background 0.3s ease;
 }
 .service-card:hover { transform: translateY(-10px); }
-.service-card:hover::before { background: rgba(0, 0, 0, 0.5); }
+.service-card:hover::before { background: rgba(0, 0, 0, 0.3); }
 
 .service-content { position: relative; z-index: 1; color: white; }
 .service-content h3 { font-size: 1.1rem; margin-bottom: 10px; }
 .service-content p { font-size: 0.85rem; opacity: 0.9; line-height: 1.4; }
 
-/* Background Images for Service Cards */
-.it { background-image: url('https://via.placeholder.com/400'); }
-.security { background-image: url('https://via.placeholder.com/400'); }
-.datacenter { background-image: url('https://via.placeholder.com/400'); }
-.datasecurity { background-image: url('https://via.placeholder.com/400'); }
-.networking { background-image: url('https://via.placeholder.com/400'); }
-.fire { background-image: url('https://via.placeholder.com/400'); }
+.it { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnQHqFFXJeSiF96JM6dB_ISjsfguQt4h0Q9Q&s'); }
+.security { background-image: url('https://cito.gov.bz/wp-content/uploads/2024/10/cyber_physicalsecurity.jpg'); }
+.datacenter { background-image: url('https://www.racksolutions.com/news//app/uploads/AdobeStock_87909563.jpg'); }
+.datasecurity { background-image: url('https://www.informatica.com/content/dam/informatica-com/en/blogs/uploads/2021/blogs/b09/b09-data-security-vs-data-privacy-whats-the-difference.jpg'); }
+.networking { background-image: url('https://www.microsoft.com/en-us/research/wp-content/uploads/2018/08/01_MSR_SIGCOMM_Data_Network_1400x788.png'); }
+.fire { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgXNFjbS9AWmQUi-SePfknMq7gKQNbcvZRyQ&s'); }
 
-/* Responsive */
 @media (max-width: 992px) {
   .why-container, .about-grid-container, .services-static-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -270,7 +253,6 @@ html { scroll-behavior: smooth; }
     align-items: flex-start;
   }
 }
-
 
 .dropdown {
   position: relative;
@@ -409,8 +391,6 @@ html { scroll-behavior: smooth; }
   }
 }
 
-
-/* Contact */
 .map-container {
   width: 100%;
   height: 380px;
@@ -435,7 +415,7 @@ html { scroll-behavior: smooth; }
 }
 
 .contact-label {
-  color: #1e66f5;
+  color: #00112d;
   letter-spacing: 2px;
   font-size: 14px;
   font-weight: 600;
@@ -464,7 +444,7 @@ html { scroll-behavior: smooth; }
 }
 
 .icon-box {
-  background: #1e66f5;
+  background: #00112d;
   color: white;
   width: 60px;
   height: 60px;
@@ -503,7 +483,7 @@ html { scroll-behavior: smooth; }
   width: 100%;
   max-width: 420px;
   padding: 35px;
-  border: 2px solid #1e66f5;
+  border: 2px solid #00112d;
   border-radius: 16px;
 }
 
@@ -526,7 +506,7 @@ html { scroll-behavior: smooth; }
 }
 
 .primary-cta {
-  background: #1e66f5;
+  background: #00112d;
   color: white;
   border: none;
   padding: 14px;
@@ -557,4 +537,3 @@ html { scroll-behavior: smooth; }
   height: 32px;
   object-fit: contain;
 }
-
