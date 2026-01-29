@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +6,18 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -38,6 +50,30 @@ const Contact = () => {
       console.error("Error:", error);
       alert("Server error");
     }
+  };
+
+  const styles = {
+    scrollTopBtn: {
+      position: "fixed",
+      bottom: "40px",
+      right: "40px",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      backgroundColor: "#355d8f",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "24px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+      zIndex: 1000,
+      transition: "opacity 0.3s, transform 0.3s",
+      opacity: isScrolled ? "1" : "0",
+      pointerEvents: isScrolled ? "all" : "none",
+    },
   };
 
   return (
@@ -167,6 +203,8 @@ const Contact = () => {
 
         </div>
       </div>
+
+      <button style={styles.scrollTopBtn} onClick={scrollToTop}>↑</button>
     </>
   );
 };
