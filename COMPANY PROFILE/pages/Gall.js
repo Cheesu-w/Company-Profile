@@ -167,50 +167,13 @@ const Gall = () => {
     return {};
   };
 
-  const Navbar = () => (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <div className="logo">
-          <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo" />
-        </div>
-        <ul className="nav-links">
-          <li>
-            <Link to="/" onClick={scrollToTop}>Home</Link>
-          </li>
-          <li>
-            <Link to="/company" onClick={scrollToTop}>Company</Link>
-          </li>
-          <li>
-            <Link to="/solution" onClick={scrollToTop}>Solution</Link>
-          </li>
-
-          <li className="dropdown">
-            <span className="dropdown-title">Partners & Clients ▾</span>
-            <ul className="dropdown-menu">
-              <li><Link to="/partners" onClick={scrollToTop}>Partners</Link></li>
-              <li><Link to="/clients" onClick={scrollToTop}>Clients</Link></li>
-            </ul>
-          </li>
-
-          <li>
-            <Link to="/gall" onClick={scrollToTop}>Gallery</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="contact-btn" onClick={scrollToTop}>Contact</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-
   return (
     <div className="gallery-page" style={{ position: "relative" }}>
-      <Navbar />
       <button style={styles.scrollTopBtn} onClick={scrollToTop}>↑</button>
 
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content">
+          <div className="hero-content" style={{marginLeft:'125px'}}>
             <h1>Gallery</h1>
           </div>
         </div>
