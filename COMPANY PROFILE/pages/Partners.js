@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
-
 
 const dataCenterLogos = [
   "/logos/dataCenterLogos/3m.png",
@@ -90,52 +89,84 @@ const LogoSlider = ({ title, bgColor, logos }) => {
 };
 
 const Partners = () => {
-  const placeholder =
-    "https://via.placeholder.com/200x120?text=Logo";
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const logos = Array(8).fill(placeholder);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const styles = {
+    scrollTopBtn: {
+      position: "fixed",
+      bottom: "40px",
+      right: "40px",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      backgroundColor: "#355d8f",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "24px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+      zIndex: 1000,
+      transition: "opacity 0.3s, transform 0.3s",
+      opacity: isScrolled ? "1" : "0",
+      pointerEvents: isScrolled ? "all" : "none",
+    },
+  };
 
   return (
     <div className="partners-page">
       <h1 className="page-title">PARTNERS</h1>
       <h2 className="page-subtitle">Visible Manage ICT Services</h2>
 
-        <LogoSlider
+      <LogoSlider
         title="DATA CENTER & NETWORK INFRASTRUCTURE"
         bgColor="#0a1128"
         logos={dataCenterLogos}
-        />
+      />
 
-        <LogoSlider
+      <LogoSlider
         title="WIRELESS NETWORK SYSTEM"
         bgColor="#001f54"
         logos={wirelessLogos}
-        />
+      />
 
-        <LogoSlider
+      <LogoSlider
         title="COMMUNICATION SYSTEM"
         bgColor="#034078"
         logos={commsLogos}
-        />
+      />
 
-        <LogoSlider
+      <LogoSlider
         title="NETWORK SECURITY"
         bgColor="#1282a2"
         logos={networkLogos}
-        />
+      />
 
-        <LogoSlider
+      <LogoSlider
         title="PHYSICAL SECURITY"
         bgColor="#1282a2"
         logos={physicalLogos}
-        />
+      />
 
-        <LogoSlider
+      <LogoSlider
         title="HOSTING & CLOUD COMPUTING"
         bgColor="#46a6c0"
         logos={hostingLogos}
-        />
+      />
 
+      <button style={styles.scrollTopBtn} onClick={scrollToTop}>↑</button>
     </div>
   );
 };
