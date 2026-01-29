@@ -222,17 +222,27 @@ const Company = () => {
     },
   };
 
+  // ---------- UPDATED NAVBAR WITH DROPDOWN ----------
   const Navbar = () => (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <div className="logo">
           <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo" />
         </div>
+
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
           <li><Link to="/company" onClick={scrollToTop}>Company</Link></li>
           <li><Link to="/solution">Solution</Link></li>
-          <li><Link to="/partners">Partners & Clients</Link></li>
+
+          <li className="dropdown">
+            <span className="dropdown-title">Partners & Clients ▾</span>
+            <ul className="dropdown-menu">
+              <li><Link to="/partners">Partners</Link></li>
+              <li><Link to="/clients">Clients</Link></li>
+            </ul>
+          </li>
+
           <li><Link to="/gall">Gallery</Link></li>
           <li><Link to="/contact" className="contact-btn">Contact</Link></li>
         </ul>
@@ -270,7 +280,7 @@ const Company = () => {
       </header>
 
       <section className="featured" ref={featuredRef}>
-        <div className="section-header" style={{ textAlign: "center", padding: "60px 20px" }}>
+        <div style={{ textAlign: "center", padding: "60px 20px" }}>
           <h2>Visible Technologies International Corp.</h2>
           <p style={{ maxWidth: "800px", margin: "20px auto", color: "#666" }}>
             Visible is an IT solution company who are your trusted partner in navigating the digital landscape. 
@@ -322,7 +332,7 @@ const Company = () => {
                 <h3 style={styles.title}>VISION</h3>
                 <p style={styles.text}>
                   Our vision is to be globally present in providing competitive IT solutions and systems
-                  integrator that support our customers, partners and employees in 2017. We strive to achieve 
+                  integrator that support our customers, partners and employees. We strive to achieve 
                   this through innovation, quality and commitment to first class service.
                 </p>
               </div>
