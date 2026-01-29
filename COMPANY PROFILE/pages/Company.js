@@ -222,7 +222,6 @@ const Company = () => {
     },
   };
 
-  // ---------- UPDATED NAVBAR WITH DROPDOWN ----------
   const Navbar = () => (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
@@ -377,3 +376,4 @@ const Company = () => {
 };
 
 export default Company;
+
