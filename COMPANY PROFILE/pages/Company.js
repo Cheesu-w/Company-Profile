@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import picture1 from "../assets/picture1.png"; 
 import ceoImage from "../assets/ceo.png"; 
 
@@ -13,10 +12,6 @@ const Company = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToFeatured = () => {
-    featuredRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -54,11 +49,13 @@ const Company = () => {
       textAlign: "center",
       marginBottom: "20px",
     },
-    mainTitle: {
-      fontSize: "2rem",
+    mainTitle:  {
+      fontSize: "2.2rem",
+      fontWeight: "800",
+      textAlign: "left",
+      letterSpacing: "0.5px",
+      fontFamily: "Arial, sans-serif",
       color: "#222",
-      fontWeight: "bold",
-      letterSpacing: "1px",
     },
     cardWrapper: {
       position: "relative",
@@ -234,17 +231,17 @@ const Company = () => {
   imageLayoutTitle: {
     fontSize: "2.2rem",
     fontWeight: "800",
-    textAlign: "left",
+    textAlign: "center",
     marginBottom: "40px",
     letterSpacing: "0.5px",
-    fontFamily: "Arial, sans-serif", // Or a similar clean sans-serif
+    fontFamily: "Arial, sans-serif",
     color: "#222",
   },
   rowLayout: {
     display: "flex",
-    alignItems: "center", // Vertically centers text with image
+    alignItems: "center",
     gap: "40px",
-    flexWrap: "wrap", // For mobile responsiveness
+    flexWrap: "wrap",
   },
   imageCol: {
     flex: "1",
@@ -291,7 +288,7 @@ const Company = () => {
 
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content">
+          <div className="hero-content" style={{margin:'150px'}}>
             <h1>WHO IS VISIBLE?</h1>
           </div>
         </div>
@@ -299,12 +296,10 @@ const Company = () => {
 
       <section className="featured" ref={featuredRef} style={styles.featuredSection}>
         <div style={styles.contentWrapper}>
-          {/* 1. Large Header at the Top */}
           <h2 style={styles.imageLayoutTitle}>
-            <span style={{ color: "#1a365d" }}>VISIBLE</span> TECHNOLOGIES INTERNATIONAL CORP.
+            <span style={{ color: "#1a365d"}}>VISIBLE</span> TECHNOLOGIES INTERNATIONAL CORP.
           </h2>
 
-          {/* 2. Two-Column Layout */}
           <div style={styles.rowLayout}>
             <div style={styles.imageCol}>
               <img
@@ -328,7 +323,7 @@ const Company = () => {
       <section style={styles.sectionGray}>
         <div style={styles.container}>
           <div style={styles.headerSection}>
-            <h2 style={styles.mainTitle}>Why We Exist & Where We’re Going</h2>
+            <h2 style={styles.mainTitle}>WHY WE EXIST & WHERE WE’RE GOING</h2>
           </div>
 
           <div style={styles.cardsContainer}>
