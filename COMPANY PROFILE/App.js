@@ -1,17 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import logo from "./assets/vtic.webp";
 
+// Page Imports
 import Company from "./pages/Company";
 import Solution from "./pages/Solution";
 import Partners from "./pages/Partners";
 import Gall from "./pages/Gall";
 import Contact from "./pages/Contact";
-import Footer from "./component/Footer";
 import Clients from "./pages/Clients";
+import Footer from "./component/Footer";
+
+import iconSurvey from "./assets/picture1.png";
+import iconResponsive from "./assets/picture1.png";
+import iconPricing from "./assets/picture1.png";
+import iconEndToEnd from "./assets/picture1.png";
+import iconInnovation from "./assets/picture1.png";
+import iconQuality from "./assets/picture1.png";
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const aboutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -19,192 +29,158 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const about = [
-    { id: 1, title: "Site Survey", img: "https://media.istockphoto.com/id/1054975708/vector/a-man-in-a-helmet-and-theodolite.jpg?s=612x612&w=0&k=20&c=_7JJ6DPE3CkKecfR9g-vWVRdhtFinFcNtdCqDL8TN3k=" },
-    { id: 2, title: "Responsive", img: "https://media.istockphoto.com/id/1218761008/vector/fast-contract-linear-icon-of-instant-deal.jpg?s=612x612&w=0&k=20&c=GLzbhkdNkImK-OSDyE_J0qqduL0Jlt1lhW_eixhfJvg=" },
-    { id: 3, title: "Affordable Pricing", img: "https://img.freepik.com/premium-vector/affordable-prices-icon_1076610-110376.jpg?w=360" },
-    { id: 4, title: "End to End Solutions", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_TTkKumQQtiXxT_--1llP7PSRTjEdTEhuA&s" },
-    { id: 5, title: "Innovative Solutions", img: "https://png.pngtree.com/png-clipart/20210311/original/pngtree-light-bulb-innovation-clip-art-png-image_5978000.png" },
-    { id: 6, title: "High Quality Service", img: "https://otrs.com/wp-content/uploads/IT-Service-Desk-Featured-Image.jpg" },
-  ];
-
-  const LandingPage = () => {
-    const contentRef = useRef(null);
-
-    const scrollToContent = () => {
-      contentRef.current.scrollIntoView({ behavior: "smooth" });
-    };
-
-    return (
-      <div className="landing-page">
-        <header className="hero">
-          <div className="hero-overlay">
-            <div className="hero-content">
-              <h1>Transforming your Businesses</h1>
-              <h1>through innovative IT Solutions!</h1>
-              <button className="primary-cta" onClick={scrollToContent}>
-                Explore Now
-              </button>
-            </div>
-          </div>
-        </header>
-
-        <section className="featured" ref={contentRef}>
-          <div className="section-header">
-            <h2>About Us</h2>
-            <p>
-              Visible is an IT solution company who are your trusted partner in navigating the digital landscape.
-              <br />From tailored software development to cutting-edge cybersecurity and transformative cloud services,
-              <br />we deliver seamless technology solutions to drive efficiency, productivity, 
-              <br />and growth for your organization.
-            </p>
-          </div>
-
-          <div className="grid-container">
-            {about.map((item) => (
-              <div key={item.id} className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img src={item.img} alt={item.title} />
-                    <h3>{item.title}</h3>
-                  </div>
-                  <div className="flip-card-back">
-                    <h3>{item.title}</h3><br />
-                    <p>We provide {item.title.toLowerCase()} to help your business grow.</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="why-choose-us">
-          <div className="section-header">
-            <h2>Why Choose Us</h2>
-            <p>
-              VISIBLE aims to be your partner in ensuring the application of economical, efficient,
-              durable and flexible solutions that allow your organization to respond rapidly to
-              both market and customer needs. Bringing you wide variety of choices for our
-              complete end to end solutions.
-            </p>
-          </div>
-          <ul className="reasons-list">
-            <li>Solution 1: Enterprise Complete End to End Solution</li>
-            <li>Solution 2: Mid-Range End to End Solution for Small to Medium Business</li>
-            <li>Solution 3: Entry Level Complete End to End Solution</li>
-          </ul>
-        </section>
-
-        <section className="our-services">
-          <div className="section-header">
-            <h2>Our Services</h2>
-          </div>
-
-          <div className="services-grid">
-            <div className="card-row">
-              <div className="flip-card it">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>IT Infrastructure</h3></div>
-                  <div className="flip-card-back">
-                    <p>A standardized and organized approach to designing and installing a network infrastructure within a building or facility.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flip-card security">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>Physical Security</h3></div>
-                  <div className="flip-card-back">
-                    <p>Physical security refers to measures to protect assets, resources, and personnel from unauthorized access, damage, or harm.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flip-card datacenter">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>Data Center</h3></div>
-                  <div className="flip-card-back">
-                    <p>Data centers house and manage computer systems and associated components like storage and networking equipment.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card-row">
-              <div className="flip-card networking">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>Networking</h3></div>
-                  <div className="flip-card-back">
-                    <p>Networking technology enables communication and data exchange between devices and systems within a network.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flip-card datasecurity">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>Data Security</h3></div>
-                  <div className="flip-card-back">
-                    <p>Protecting digital data from unauthorized access, corruption, theft, or loss.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flip-card fire">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front"><h3>Fire Detection And Alarm System</h3></div>
-                  <div className="flip-card-back">
-                    <p>FDAS provides early fire warnings to enable safe evacuation and prompt firefighting.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const Navbar = () => (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <div className="logo">
-          <img src="https://via.placeholder.com/120x40?text=TRAVEL+LOGO" alt="Logo" />
+const aboutItems = [
+  { id: 1, title: 'SITE SURVEY', img: iconSurvey },
+  { id: 2, title: 'RESPONSIVE', img: iconResponsive },
+  { id: 3, title: 'AFFORDABLE PRICING', img: iconPricing },
+  { id: 4, title: 'END TO END SOLUTION', img: iconEndToEnd },
+  { id: 5, title: 'INNOVATIVE SOLUTION', img: iconInnovation },
+  { id: 6, title: 'HIGH QUALITY SERVICES', img: iconQuality },
+];
+
+  const LandingPage = () => (
+    <div className="landing-page">
+      <header className="hero">
+        <div className="hero-overlay">
+          <div className="hero-content">
+            <h1>VISIBLE</h1>
+            <p>Transforming your Businesses through innovative IT Solutions!</p>
+            <button className="primary-cta" onClick={scrollToAbout}>
+              EXPLORE
+            </button>
+          </div>
         </div>
+      </header>
+      
+      {/* About Us Section */}
+      <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin: '60px auto' }}>
+        <div className="section-header">
+          <h2 style={{ fontSize: '3rem', fontWeight: '800' }}>ABOUT US</h2>
+          <p>Visible is an IT solution company who are your trusted partner in navigating the digital landscape.</p>
+        </div>
+        <div className="about-grid-container">
+          {aboutItems.map((item) => (
+            <div key={item.id} className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img src={item.img} alt={item.title} />
+                  <h3>{item.title}</h3>
+                </div>
+                <div className="flip-card-back">
+                  <h3>{item.title}</h3>
+                  <p>We provide professional {item.title.toLowerCase()} to help your business grow.</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <ul className="nav-links">
-          <li>
-            <Link
-              to="/"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              Home
-            </Link>
-          </li>
+      {/* Why Choose Us Section */}
+      <section className="why-choose-us">
+        <div className="why-container">
+          <div className="why-left">
+            <h2>WHY CHOOSE US</h2>
+            <p>VISIBLE aims to be your partner in ensuring the application of economical, efficient, durable and flexible solutions.</p>
+            <div className="why-image-wrapper">
+                <img src="https://https://theincmagazine.com/the-role-of-technology-in-modern-society/.placeholder.com/500x350" alt="Technology" />
+            </div>
+          </div>
+          <div className="why-right">
+            <div className="solution-item">
+              <span className="sol-badge">SOLUTION 1</span>
+              <h4>Enterprise Complete End to End Solution</h4>
+              <p>A scalable, high-performance system for large organizations with complex operations.</p>
+            </div>
+            <div className="solution-item">
+              <span className="sol-badge">SOLUTION 2</span>
+              <h4>Mid-Range End to End Solution</h4>
+              <p>A reliable and cost-effective solution tailored for growing businesses.</p>
+            </div>
+            <div className="solution-item">
+              <span className="sol-badge">SOLUTION 3</span>
+              <h4>Entry Level End to End Solution</h4>
+              <p>A simple and affordable package for small teams starting their operations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <li><Link to="/company">Company</Link></li>
-          <li><Link to="/solution">Solution</Link></li>
-
-          <li className="dropdown">
-            <span className="dropdown-title">Partners & Clients ▾</span>
-            <ul className="dropdown-menu">
-              <li><Link to="/partners">Partners</Link></li>
-              <li><Link to="/clients">Clients</Link></li>
-            </ul>
-          </li>
-
-          <li><Link to="/gall">Gallery</Link></li>
-          <li><Link to="/contact" className="contact-btn">Contact</Link></li>
-        </ul>
-      </div>
-    </nav>
+      {/* Our Services Section */}
+      <section className="our-services">
+        <div className="section-header">
+          <h2>OUR SERVICES</h2>
+        </div>
+        <div className="services-static-grid">
+           <div className="service-card it">
+              <div className="service-content">
+                <h3>IT INFRASTRUCTURE</h3>
+                <p>A standardized and organized approach to designing and installing network infrastructure.</p>
+              </div>
+           </div>
+           <div className="service-card security">
+              <div className="service-content">
+                <h3>PHYSICAL SECURITY</h3>
+                <p>Measures put in place to protect physical assets, resources, and personnel.</p>
+              </div>
+           </div>
+           <div className="service-card datacenter">
+              <div className="service-content">
+                <h3>DATA CENTER</h3>
+                <p>Specialized facilities used to house and manage computer systems and associated components.</p>
+              </div>
+           </div>
+           <div className="service-card datasecurity">
+              <div className="service-content">
+                <h3>DATA SECURITY</h3>
+                <p>Protecting digital data from unauthorized access, corruption, or theft.</p>
+              </div>
+           </div>
+           <div className="service-card networking">
+              <div className="service-content">
+                <h3>NETWORKING</h3>
+                <p>Hardware and software protocols that enable communication between devices.</p>
+              </div>
+           </div>
+           <div className="service-card fire">
+              <div className="service-content">
+                <h3>FIRE DETECTION AND ALARM SYSTEM</h3>
+                <p>Early warning systems to allow occupants to evacuate safely during fire emergencies.</p>
+              </div>
+           </div>
+        </div>
+      </section>
+    </div>
   );
 
   return (
     <Router>
-      <Navbar />
+      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+        <div className="nav-container">
+          <div className="logo">
+            <Link to="/"><img src={logo} alt="VTIC Logo" /></Link>
+          </div>
+          <ul className="nav-links">
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="/company">COMPANY</Link></li>
+            <li><Link to="/solution">SOLUTION</Link></li>
+            <li className="dropdown">
+              <span className="dropdown-title">PARTNERS AND CLIENT ▾</span>
+              <ul className="dropdown-menu">
+                <li><Link to="/partners">Partners</Link></li>
+                <li><Link to="/clients">Clients</Link></li>
+              </ul>
+            </li>
+            <li><Link to="/gall">GALLERY</Link></li>
+            <li><Link to="/contact" className="contact-btn">CONTACT</Link></li>
+          </ul>
+        </div>
+      </nav>
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/company" element={<Company />} />
