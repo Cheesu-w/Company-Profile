@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import logo from "./assets/vtic.webp";
 
-// Page Imports
 import Company from "./pages/Company";
 import Solution from "./pages/Solution";
 import Partners from "./pages/Partners";
@@ -12,12 +11,12 @@ import Contact from "./pages/Contact";
 import Clients from "./pages/Clients";
 import Footer from "./component/Footer";
 
-import iconSurvey from "./assets/picture1.png";
-import iconResponsive from "./assets/picture1.png";
-import iconPricing from "./assets/picture1.png";
-import iconEndToEnd from "./assets/picture1.png";
-import iconInnovation from "./assets/picture1.png";
-import iconQuality from "./assets/picture1.png";
+import iconSurvey from "./assets/site survey.png";
+import iconResponsive from "./assets/responsive.png";
+import iconPricing from "./assets/affordable pricing.png";
+import iconEndToEnd from "./assets/end to end solutions.png";
+import iconInnovation from "./assets/innovative solution.png";
+import iconQuality from "./assets/high quality service.png";
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +45,7 @@ const aboutItems = [
     <div className="landing-page">
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content">
+          <div className="hero-content" style={{margin:'150px'}}>
             <h1>VISIBLE</h1>
             <p>Transforming your Businesses through innovative IT Solutions!</p>
             <button className="primary-cta" onClick={scrollToAbout}>
@@ -56,12 +55,15 @@ const aboutItems = [
         </div>
       </header>
       
-      {/* About Us Section */}
-      <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin: '60px auto' }}>
+      <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin:'-60px auto'}}>
         <div className="section-header">
-          <h2 style={{ fontSize: '3rem', fontWeight: '800' }}>ABOUT US</h2>
-          <p>Visible is an IT solution company who are your trusted partner in navigating the digital landscape.</p>
+          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>ABOUT US</h2>
+          <p>Visible is a IT solution company who are your trusted partner in navigating the digital landscape. 
+            From tailored software development to cutting-edge cybersecurity and transformative cloud services, 
+            we deliver seamless technology solutions to drive efficiency, productivity, and growth for your organization.</p>
         </div>
+        <br></br>
+        <br></br>
         <div className="about-grid-container">
           {aboutItems.map((item) => (
             <div key={item.id} className="flip-card">
@@ -80,14 +82,13 @@ const aboutItems = [
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="why-choose-us">
+      <section className="why-choose-us" ref={aboutRef} style={{ maxWidth: '1200px', margin:'-110px auto'}}>
         <div className="why-container">
           <div className="why-left">
-            <h2>WHY CHOOSE US</h2>
+            <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>WHY CHOOSE US</h2>
             <p>VISIBLE aims to be your partner in ensuring the application of economical, efficient, durable and flexible solutions.</p>
             <div className="why-image-wrapper">
-                <img src="https://https://theincmagazine.com/the-role-of-technology-in-modern-society/.placeholder.com/500x350" alt="Technology" />
+                <img src="https://vtic.ph/wp-content/uploads/2024/05/Visible_Presentation.png" alt="Technology" />
             </div>
           </div>
           <div className="why-right">
@@ -107,14 +108,15 @@ const aboutItems = [
               <p>A simple and affordable package for small teams starting their operations.</p>
             </div>
           </div>
+          <br></br>
         </div>
       </section>
 
-      {/* Our Services Section */}
-      <section className="our-services">
+      <section className="our-services" ref={aboutRef} style={{ maxWidth: '1200px', margin:'150px auto', marginTop: '-80px'}}>
         <div className="section-header">
-          <h2>OUR SERVICES</h2>
+          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>OUR SERVICES</h2>
         </div>
+        <br></br>
         <div className="services-static-grid">
            <div className="service-card it">
               <div className="service-content">
