@@ -24,7 +24,7 @@ const images = [
   { src: gall4, title: "Alantek Structured Cabling", description: "Project for World of Fun" },
   { src: gall5, title: "Alantek Structured Cabling", description: "Project for World of Fun" },
   { src: gall6, title: "Alantek Structured Cabling", description: "Project for World of Fun" },
-  { src: gall7, title: "94 kilometers Point-to-multipoint Backhaul Wireless Connectivity"},
+  { src: gall7, title: "94 kilometers Point-to-multipoint Backhaul Wireless Connectivity" },
   { src: gall8, title: "Ubiquiti Access Point", description: "Project for Victoria Court Pampanga" },
   { src: gall9, title: "Ubiquiti Access Point", description: "Project for Victoria Court Pampanga" },
   { src: gall10, title: "Ubiquiti Access Point", description: "Project for Victoria Court Pampanga" },
@@ -54,21 +54,21 @@ const Gall = () => {
 
   const styles = {
     sectionWhite: { 
-        padding: "80px 20px", 
-        backgroundColor: "#ffffff", 
-        display: "flex", 
-        justifyContent: "center" 
+      padding: "80px 20px", 
+      backgroundColor: "#ffffff", 
+      display: "flex", 
+      justifyContent: "center" 
     },
     container: { 
-        maxWidth: "1200px", 
-        width: "100%" 
+      maxWidth: "1200px", 
+      width: "100%" 
     },
     galleryGrid: { 
-        display: "grid", 
-        gridTemplateColumns: "repeat(4, 1fr)", 
-        gridAutoFlow: "dense", 
-        gridAutoRows: "250px", 
-        gap: "15px" 
+      display: "grid", 
+      gridTemplateColumns: "repeat(4, 1fr)", 
+      gridAutoFlow: "dense", 
+      gridAutoRows: "250px", 
+      gap: "15px" 
     },
     imageCard: {
       borderRadius: "15px",
@@ -78,7 +78,12 @@ const Gall = () => {
       position: "relative",
       transition: "transform 0.3s ease",
     },
-    image: { width: "100%", height: "100%", objectFit: "cover", display: "block" },
+    image: { 
+      width: "100%", 
+      height: "100%", 
+      objectFit: "cover", 
+      display: "block" 
+    },
     overlay: {
       position: "absolute",
       top: 0,
@@ -99,13 +104,13 @@ const Gall = () => {
       padding: "10px",
     },
     overlayTitle: { 
-        fontWeight: "bold", 
-        fontSize: "1.3rem", 
-        marginBottom: "5px" 
+      fontWeight: "bold", 
+      fontSize: "1.3rem", 
+      marginBottom: "5px" 
     },
     overlayDescription: { 
-        fontWeight: "normal", 
-        fontSize: "1rem" 
+      fontWeight: "normal", 
+      fontSize: "1rem" 
     },
     modalOverlay: {
       position: "fixed",
@@ -121,19 +126,19 @@ const Gall = () => {
       cursor: "zoom-out",
     },
     modalImage: { 
-        maxWidth: "90%", 
-        maxHeight: "90%", 
-        borderRadius: "10px", 
-        boxShadow: "0 0 30px rgba(0,0,0,0.5)" 
+      maxWidth: "90%", 
+      maxHeight: "90%", 
+      borderRadius: "10px", 
+      boxShadow: "0 0 30px rgba(0,0,0,0.5)" 
     },
     closeBtn: { 
-        position: "absolute", 
-        top: "30px", 
-        right: "40px", 
-        fontSize: "40px", 
-        color: "white", 
-        fontWeight: "bold", 
-        cursor: "pointer" 
+      position: "absolute", 
+      top: "30px", 
+      right: "40px", 
+      fontSize: "40px", 
+      color: "white", 
+      fontWeight: "bold", 
+      cursor: "pointer" 
     },
     scrollTopBtn: {
       position: "fixed",
@@ -169,23 +174,29 @@ const Gall = () => {
           <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo" />
         </div>
         <ul className="nav-links">
-          {[
-            { name: "Home", path: "/" },
-            { name: "Company", path: "/company" },
-            { name: "Solution", path: "/solution" },
-            { name: "Partners & Clients", path: "/partners" },
-            { name: "Gallery", path: "/gall" },
-          ].map((link, idx) => (
-            <li key={idx}>
-              <Link to={link.path} onClick={scrollToTop}>
-                {link.name}
-              </Link>
-            </li>
-          ))}
           <li>
-            <Link to="/contact" className="contact-btn" onClick={scrollToTop}>
-              Contact
-            </Link>
+            <Link to="/" onClick={scrollToTop}>Home</Link>
+          </li>
+          <li>
+            <Link to="/company" onClick={scrollToTop}>Company</Link>
+          </li>
+          <li>
+            <Link to="/solution" onClick={scrollToTop}>Solution</Link>
+          </li>
+
+          <li className="dropdown">
+            <span className="dropdown-title">Partners & Clients ▾</span>
+            <ul className="dropdown-menu">
+              <li><Link to="/partners" onClick={scrollToTop}>Partners</Link></li>
+              <li><Link to="/clients" onClick={scrollToTop}>Clients</Link></li>
+            </ul>
+          </li>
+
+          <li>
+            <Link to="/gall" onClick={scrollToTop}>Gallery</Link>
+          </li>
+          <li>
+            <Link to="/contact" className="contact-btn" onClick={scrollToTop}>Contact</Link>
           </li>
         </ul>
       </div>
@@ -195,9 +206,7 @@ const Gall = () => {
   return (
     <div className="gallery-page" style={{ position: "relative" }}>
       <Navbar />
-      <button style={styles.scrollTopBtn} onClick={scrollToTop}>
-        ↑
-      </button>
+      <button style={styles.scrollTopBtn} onClick={scrollToTop}>↑</button>
 
       <header className="hero">
         <div className="hero-overlay">
@@ -238,12 +247,7 @@ const Gall = () => {
       {selectedImage && (
         <div style={styles.modalOverlay} onClick={() => setSelectedImage(null)}>
           <span style={styles.closeBtn}>&times;</span>
-          <img
-            src={selectedImage}
-            alt="Preview"
-            style={styles.modalImage}
-            onClick={(e) => e.stopPropagation()}
-          />
+          <img src={selectedImage} alt="Preview" style={styles.modalImage} onClick={(e) => e.stopPropagation()} />
         </div>
       )}
     </div>
