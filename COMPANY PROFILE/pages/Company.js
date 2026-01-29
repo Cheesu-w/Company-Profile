@@ -220,38 +220,60 @@ const Company = () => {
       color: "#fff",
       cursor: "pointer",
     },
+
+    featuredSection: {
+    padding: "80px 20px",
+    backgroundColor: "#ffffff",
+    display: "flex",
+    justifyContent: "center",
+  },
+  contentWrapper: {
+    maxWidth: "1100px",
+    width: "100%",
+  },
+  imageLayoutTitle: {
+    fontSize: "2.2rem",
+    fontWeight: "800",
+    textAlign: "left",
+    marginBottom: "40px",
+    letterSpacing: "0.5px",
+    fontFamily: "Arial, sans-serif", // Or a similar clean sans-serif
+    color: "#222",
+  },
+  rowLayout: {
+    display: "flex",
+    alignItems: "center", // Vertically centers text with image
+    gap: "40px",
+    flexWrap: "wrap", // For mobile responsiveness
+  },
+  imageCol: {
+    flex: "1",
+    minWidth: "300px",
+  },
+  textCol: {
+    flex: "1.2",
+    minWidth: "300px",
+  },
+  showcaseImage: {
+    width: "100%",
+    height: "auto",
+    borderRadius: "20px",
+    cursor: "zoom-in",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+  },
+  descriptionText: {
+    fontSize: "1.1rem",
+    lineHeight: "1.8",
+    color: "#333",
+    textAlign: "left",
+    margin: 0,
+  },
+
   };
-
-  const Navbar = () => (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <div className="logo">
-          <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo" />
-        </div>
-
-        <ul className="nav-links">
-          <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
-          <li><Link to="/company" onClick={scrollToTop}>Company</Link></li>
-          <li><Link to="/solution">Solution</Link></li>
-
-          <li className="dropdown">
-            <span className="dropdown-title">Partners & Clients ▾</span>
-            <ul className="dropdown-menu">
-              <li><Link to="/partners">Partners</Link></li>
-              <li><Link to="/clients">Clients</Link></li>
-            </ul>
-          </li>
-
-          <li><Link to="/gall">Gallery</Link></li>
-          <li><Link to="/contact" className="contact-btn">Contact</Link></li>
-        </ul>
-      </div>
-    </nav>
-  );
 
   return (
     <div className="company-page" style={{ position: "relative" }}>
-      <Navbar />
+  
 
       {isImageOpen && (
         <div style={styles.modalOverlay} onClick={() => setIsImageOpen(false)}>
@@ -270,35 +292,35 @@ const Company = () => {
       <header className="hero">
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1>Who is Visible?</h1>
-            <button className="primary-cta" onClick={scrollToFeatured}>
-              Explore
-            </button>
+            <h1>WHO IS VISIBLE?</h1>
           </div>
         </div>
       </header>
 
-      <section className="featured" ref={featuredRef}>
-        <div style={{ textAlign: "center", padding: "60px 20px" }}>
-          <h2>Visible Technologies International Corp.</h2>
-          <p style={{ maxWidth: "800px", margin: "20px auto", color: "#666" }}>
-            Visible is an IT solution company who are your trusted partner in navigating the digital landscape. 
-            From tailored software development to cutting-edge cybersecurity and transformative cloud services, 
-            we deliver seamless technology solutions to drive efficiency, productivity, and growth for your organization.
-          </p>
-          <div style={{ marginTop: "40px" }}>
-            <img
-              src={picture1}
-              alt="Company Showcase"
-              onClick={() => setIsImageOpen(true)}
-              style={{
-                maxWidth: "90%",
-                height: "auto",
-                borderRadius: "15px",
-                cursor: "zoom-in",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-              }}
-            />
+      <section className="featured" ref={featuredRef} style={styles.featuredSection}>
+        <div style={styles.contentWrapper}>
+          {/* 1. Large Header at the Top */}
+          <h2 style={styles.imageLayoutTitle}>
+            <span style={{ color: "#1a365d" }}>VISIBLE</span> TECHNOLOGIES INTERNATIONAL CORP.
+          </h2>
+
+          {/* 2. Two-Column Layout */}
+          <div style={styles.rowLayout}>
+            <div style={styles.imageCol}>
+              <img
+                src={picture1}
+                alt="Company Showcase"
+                onClick={() => setIsImageOpen(true)}
+                style={styles.showcaseImage}
+              />
+            </div>
+            <div style={styles.textCol}>
+              <p style={styles.descriptionText}>
+                Visible is an IT solution company who are your trusted partner in navigating the digital landscape. 
+                From tailored software development to cutting-edge cybersecurity and transformative cloud services, 
+                we deliver seamless technology solutions to drive efficiency, productivity, and growth for your organization.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -331,7 +353,7 @@ const Company = () => {
                 <h3 style={styles.title}>VISION</h3>
                 <p style={styles.text}>
                   Our vision is to be globally present in providing competitive IT solutions and systems
-                  integrator that support our customers, partners and employees. We strive to achieve 
+                  integrator that support our customers, partners and employees in 2017. We strive to achieve 
                   this through innovation, quality and commitment to first class service.
                 </p>
               </div>
@@ -376,4 +398,3 @@ const Company = () => {
 };
 
 export default Company;
-
