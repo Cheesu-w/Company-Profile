@@ -173,7 +173,7 @@ const Gall = () => {
 
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content" style={{marginLeft:'125px'}}>
+          <div className="hero-content" style={{marginLeft:'150px'}}>
             <h1>Gallery</h1>
           </div>
         </div>
