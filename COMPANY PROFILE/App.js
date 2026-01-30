@@ -21,6 +21,7 @@ import iconQuality from "./assets/high quality service.png";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
   const aboutRef = useRef(null);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ const App = () => {
     <div className="landing-page">
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content" style={{margin:'150px'}}>
+          <div className="hero-content" style={{ margin: '150px' }}>
             <h1>VISIBLE</h1>
             <p>Transforming your Businesses through innovative IT Solutions!</p>
             <button className="primary-cta" onClick={scrollToAbout}>
@@ -63,15 +64,16 @@ const App = () => {
         </div>
       </header>
 
-      <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin:'-60px auto'}}>
+      <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin: '-60px auto' }}>
         <div className="section-header">
-          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>ABOUT US</h2>
-          <p>Visible is a IT solution company who are your trusted partner in navigating the digital landscape. 
-            From tailored software development to cutting-edge cybersecurity and transformative cloud services, 
-            we deliver seamless technology solutions to drive efficiency, productivity, and growth for your organization.</p>
+          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign: 'justify' }}>ABOUT US</h2>
+          <p>
+            Visible is an IT solution company who are your trusted partner in navigating the digital landscape.
+            From tailored software development to cutting-edge cybersecurity and transformative cloud services,
+            we deliver seamless technology solutions to drive efficiency, productivity, and growth for your organization.
+          </p>
         </div>
-        <br></br>
-        <br></br>
+        <br /><br />
         <div className="about-grid-container">
           {aboutItems.map((item) => (
             <div key={item.id} className="flip-card">
@@ -90,13 +92,16 @@ const App = () => {
         </div>
       </section>
 
-      <section className="why-choose-us" ref={aboutRef} style={{ maxWidth: '1200px', margin:'-110px auto'}}>
+      <section className="why-choose-us" style={{ maxWidth: '1200px', margin: '-110px auto' }}>
         <div className="why-container">
           <div className="why-left">
-            <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>WHY CHOOSE US</h2>
-            <p>VISIBLE aims to be your partner in ensuring the application of economical, efficient, durable and flexible solutions.</p>
+            <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign: 'justify' }}>WHY CHOOSE US</h2>
+            <p>
+              VISIBLE aims to be your partner in ensuring the application of economical, efficient,
+              durable and flexible solutions.
+            </p>
             <div className="why-image-wrapper">
-                <img src="https://vtic.ph/wp-content/uploads/2024/05/Visible_Presentation.png" alt="Technology" />
+              <img src="https://vtic.ph/wp-content/uploads/2024/05/Visible_Presentation.png" alt="Technology" />
             </div>
           </div>
           <div className="why-right">
@@ -116,52 +121,52 @@ const App = () => {
               <p>A simple and affordable package for small teams starting their operations.</p>
             </div>
           </div>
-          <br></br>
+          <br />
         </div>
       </section>
 
-      <section className="our-services" ref={aboutRef} style={{ maxWidth: '1200px', margin:'150px auto', marginTop: '-80px'}}>
+      <section className="our-services" style={{ maxWidth: '1200px', margin: '150px auto', marginTop: '-80px' }}>
         <div className="section-header">
-          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>OUR SERVICES</h2>
+          <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign: 'justify' }}>OUR SERVICES</h2>
         </div>
-        <br></br>
+        <br />
         <div className="services-static-grid">
-           <div className="service-card it">
-              <div className="service-content">
-                <h3>IT INFRASTRUCTURE</h3>
-                <p>A standardized and organized approach to designing and installing network infrastructure.</p>
-              </div>
-           </div>
-           <div className="service-card security">
-              <div className="service-content">
-                <h3>PHYSICAL SECURITY</h3>
-                <p>Measures put in place to protect physical assets, resources, and personnel.</p>
-              </div>
-           </div>
-           <div className="service-card datacenter">
-              <div className="service-content">
-                <h3>DATA CENTER</h3>
-                <p>Specialized facilities used to house and manage computer systems and associated components.</p>
-              </div>
-           </div>
-           <div className="service-card datasecurity">
-              <div className="service-content">
-                <h3>DATA SECURITY</h3>
-                <p>Protecting digital data from unauthorized access, corruption, or theft.</p>
-              </div>
-           </div>
-           <div className="service-card networking">
-              <div className="service-content">
-                <h3>NETWORKING</h3>
-                <p>Hardware and software protocols that enable communication between devices.</p>
-              </div>
-           </div>
-           <div className="service-card fire">
-              <div className="service-content">
-                <h3>FIRE DETECTION AND ALARM SYSTEM</h3>
-                <p>Early warning systems to allow occupants to evacuate safely during fire emergencies.</p>
-              </div>
-           </div>
+          <div className="service-card it">
+            <div className="service-content">
+              <h3>IT INFRASTRUCTURE</h3>
+              <p>A standardized and organized approach to designing and installing network infrastructure.</p>
+            </div>
+          </div>
+          <div className="service-card security">
+            <div className="service-content">
+              <h3>PHYSICAL SECURITY</h3>
+              <p>Measures put in place to protect physical assets, resources, and personnel.</p>
+            </div>
+          </div>
+          <div className="service-card datacenter">
+            <div className="service-content">
+              <h3>DATA CENTER</h3>
+              <p>Specialized facilities used to house and manage computer systems and associated components.</p>
+            </div>
+          </div>
+          <div className="service-card datasecurity">
+            <div className="service-content">
+              <h3>DATA SECURITY</h3>
+              <p>Protecting digital data from unauthorized access, corruption, or theft.</p>
+            </div>
+          </div>
+          <div className="service-card networking">
+            <div className="service-content">
+              <h3>NETWORKING</h3>
+              <p>Hardware and software protocols that enable communication between devices.</p>
+            </div>
+          </div>
+          <div className="service-card fire">
+            <div className="service-content">
+              <h3>FIRE DETECTION AND ALARM SYSTEM</h3>
+              <p>Early warning systems to allow occupants to evacuate safely during fire emergencies.</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -222,6 +227,7 @@ const App = () => {
         <Route path="/gall" element={<Gall />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
       <Footer />
 
       <button style={scrollTopBtnStyle} onClick={scrollToTop}>↑</button>
