@@ -20,10 +20,14 @@ import iconQuality from "./assets/high quality service.png";
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      setShowScrollTop(window.scrollY > 300);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,14 +36,18 @@ const App = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-const aboutItems = [
-  { id: 1, title: 'SITE SURVEY', img: iconSurvey },
-  { id: 2, title: 'RESPONSIVE', img: iconResponsive },
-  { id: 3, title: 'AFFORDABLE PRICING', img: iconPricing },
-  { id: 4, title: 'END TO END SOLUTION', img: iconEndToEnd },
-  { id: 5, title: 'INNOVATIVE SOLUTION', img: iconInnovation },
-  { id: 6, title: 'HIGH QUALITY SERVICES', img: iconQuality },
-];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const aboutItems = [
+    { id: 1, title: 'SITE SURVEY', img: iconSurvey },
+    { id: 2, title: 'RESPONSIVE', img: iconResponsive },
+    { id: 3, title: 'AFFORDABLE PRICING', img: iconPricing },
+    { id: 4, title: 'END TO END SOLUTION', img: iconEndToEnd },
+    { id: 5, title: 'INNOVATIVE SOLUTION', img: iconInnovation },
+    { id: 6, title: 'HIGH QUALITY SERVICES', img: iconQuality },
+  ];
 
   const LandingPage = () => (
     <div className="landing-page">
@@ -54,7 +62,7 @@ const aboutItems = [
           </div>
         </div>
       </header>
-      
+
       <section className="featured" ref={aboutRef} style={{ maxWidth: '1200px', margin:'-60px auto'}}>
         <div className="section-header">
           <h2 style={{ fontSize: '3rem', fontWeight: '800', textAlign:'justify'}}>ABOUT US</h2>
@@ -159,6 +167,28 @@ const aboutItems = [
     </div>
   );
 
+  const scrollTopBtnStyle = {
+    position: "fixed",
+    bottom: "40px",
+    right: "40px",
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    backgroundColor: "#355d8f",
+    color: "white",
+    border: "none",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "24px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+    zIndex: 1000,
+    opacity: showScrollTop ? 1 : 0,
+    pointerEvents: showScrollTop ? "all" : "none",
+    transition: "opacity 0.3s",
+  };
+
   return (
     <Router>
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -193,6 +223,8 @@ const aboutItems = [
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+
+      <button style={scrollTopBtnStyle} onClick={scrollToTop}>↑</button>
     </Router>
   );
 };
