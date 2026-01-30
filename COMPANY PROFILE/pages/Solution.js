@@ -255,7 +255,7 @@ const expandSectionStyle = { padding: '0 20px 20px' };
 const hrStyle = { border: '0', borderTop: '1px solid #eee', margin: '20px 0' };
 const subHeadingStyle = { marginBottom: '10px', fontWeight: 'bold', fontSize: '0.95rem' };
 const productOverviewTextStyle = { fontSize: '0.9rem', color: '#444', lineHeight: '1.6', marginBottom: '20px' };
-const listGridStyle = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '20px' };
+const listGridStyle = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '20px', alignItems: 'flex-start' };
 const listBoxStyle = { backgroundColor: '#fff', borderRadius: '4px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid #eee' };
 const listHeaderStyle = { backgroundColor: '#3f3f4e', color: 'white', padding: '12px 15px', fontSize: '0.85rem', fontWeight: 'bold', display: 'flex', justifyContent: 'space-between' };
 const ulStyle = { listStyleType: 'disc', padding: '20px 35px', margin: 0 };
@@ -268,3 +268,4 @@ const liStyle = {
 };
 
 export default Solution;
+
