@@ -14,42 +14,28 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/";
   const navClass = `navbar ${(isScrolled || !isHomePage) ? "scrolled" : ""}`;
 
-  const isActive = (path) =>
-    location.pathname === path ? "active" : "";
-
   return (
     <nav className={navClass}>
       <div className="nav-container">
-
         <div className="logo">
           <Link to="/">LOGO</Link>
         </div>
 
         <ul className="nav-links">
-
-          <li><Link to="/" className={isActive("/")}>Home</Link></li>
-
-          <li><Link to="/company" className={isActive("/company")}>Company</Link></li>
-
-          <li><Link to="/solution" className={isActive("/solution")}>Solution</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/company">Company</Link></li>
+          <li><Link to="/solution">Solution</Link></li>
 
           <li className="dropdown">
             <span className="dropdown-title">Partners & Clients ▾</span>
-
             <ul className="dropdown-menu">
               <li><Link to="/partners">Partners</Link></li>
               <li><Link to="/clients">Clients</Link></li>
             </ul>
           </li>
 
-          <li><Link to="/gallery" className={isActive("/gallery")}>Gallery</Link></li>
-
-          <li>
-            <Link to="/contact" className={`contact-btn ${isActive("/contact")}`}>
-              Contact
-            </Link>
-          </li>
-
+          <li><Link to="/gallery">Gallery</Link></li>
+          <li><Link to="/contact" className="contact-btn">Contact</Link></li>
         </ul>
       </div>
     </nav>
