@@ -10,14 +10,13 @@ const Solution = () => {
   const cardStyle = {
   backgroundColor: '#fff',
   borderRadius: '20px',
-  boxShadow: '0 10px 30px rgba(0,0,0,0.1)', // Deeper shadow for that "floating" effect
+  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
   overflow: 'hidden',
   transition: 'all 0.3s ease',
   padding: '15px',
   border: '1px solid #f0f0f0',
   marginBottom: '20px'
 };
-  // Data structure now includes a unique image field for every card
   const categories = [
     {
       title: "Physical Security",
@@ -64,6 +63,18 @@ const Solution = () => {
           name: "WIRELESS CONNECTIVITY", 
           desc: "Network or communication link between devices.",
           image: "https://via.placeholder.com/600x400?text=Wireless+Network" 
+        }
+      ]
+    },
+    {
+      title: "Communication Devices",
+      type: "wide",
+      items: [
+        { 
+          id: "comm-devices", 
+          name: "COMMUNICATION DEVICES", 
+          desc: "Devices that enable the transmission and reception of information across various platforms and networks.",
+          image: "https://via.placeholder.com/600x400?text=Communication+Devices" 
         }
       ]
     },
@@ -132,7 +143,6 @@ const Solution = () => {
             {cat.items.map((item) => (
               <div key={item.id} className={`solution-card ${expandedId === item.id ? 'active' : ''}`} style={cardStyle}>
                 <div style={{ display: cat.type === 'wide' ? 'flex' : 'block', gap: '20px' }}>
-                  {/* The background image is now dynamic based on the item.image property */}
                   <div className="card-image" style={{ 
                     width: cat.type === 'wide' ? '400px' : '100%', 
                     height: '220px', 
@@ -173,7 +183,6 @@ const Solution = () => {
   );
 };
 
-// Internal Styles
 const cardStyle = {
   backgroundColor: '#fff',
   borderRadius: '20px',
