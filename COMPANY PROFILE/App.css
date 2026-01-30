@@ -777,3 +777,98 @@ html {
 .solution-card:hover .card-image {
   filter: brightness(1.1);
 }
+
+/* Smooth expansion animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.solution-card {
+  border: 1px solid transparent;
+}
+
+.solution-card.active {
+  border-color: #008ba3;
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Ensure images fit the theme */
+.card-image {
+  background-color: #00112D; /* Dark fallback */
+  transition: filter 0.3s ease;
+}
+
+.solution-card:hover .card-image {
+  filter: brightness(1.1);
+}
+
+/* Layout for internal dropdowns */
+.dropdown-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.interactive-dropdown {
+  flex: 1;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Dark Header Style */
+.dropdown-header {
+  background-color: #3f3f4e; /* The dark slate color from your images */
+  color: #ffffff;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.dropdown-header:hover {
+  background-color: #4a4a5c;
+}
+
+/* Arrow rotation */
+.arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+  transform: rotate(180deg); /* Default down */
+}
+
+.arrow.up {
+  transform: rotate(0deg); /* Points up when open */
+}
+
+/* List Styling */
+.dropdown-list {
+  list-style-type: disc;
+  padding: 20px 40px;
+  margin: 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-list li {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.your-list-item-class {
+  white-space: pre-line;
+}
