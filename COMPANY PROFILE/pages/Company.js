@@ -288,7 +288,7 @@ const Company = () => {
 
       <header className="hero">
         <div className="hero-overlay">
-          <div className="hero-content" style={{margin:'150px'}}>
+          <div className="hero-content" style={{margin:'130px'}}>
             <h1>WHO IS VISIBLE?</h1>
           </div>
         </div>
